@@ -1,27 +1,20 @@
-# Node.js dependencies (falls du Node.js verwendest)
 node_modules/
 
-# Build output (z.B. für Webpack oder andere Build-Tools)
 dist/
 build/
 
-# Log files
 *.log
 
-# IDE spezifische Dateien
 .idea/
 .vscode/
 *.iml
 
-# Betriebssystem-spezifische Dateien
 .DS_Store
 Thumbs.db
 
-# Backup-Dateien
 *~
 *.bak
 
-# Temporäre Dateien
 *.swp
 *.swo
 *.tmp
