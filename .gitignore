@@ -9,19 +9,19 @@ build/
 *.log
 
 # IDE spezifische Dateien
-.idea/            # IntelliJ IDEA
-.vscode/          # Visual Studio Code
-*.iml             # IntelliJ IDEA Modul-Dateien
+.idea/
+.vscode/
+*.iml
 
 # Betriebssystem-spezifische Dateien
-.DS_Store         # macOS
-Thumbs.db         # Windows
+.DS_Store
+Thumbs.db
 
 # Backup-Dateien
-*~                 # Backup-Dateien (z.B. von Texteditoren)
-*.bak              # Backup-Dateien
+*~
+*.bak
 
 # Temporäre Dateien
-*.swp              # Vim Swap-Dateien
-*.swo              # Vim Swap-Dateien
-*.tmp              # Temporäre Dateien
+*.swp
+*.swo
+*.tmp
