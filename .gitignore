@@ -1,0 +1,27 @@
+# Node.js dependencies (falls du Node.js verwendest)
+node_modules/
+
+# Build output (z.B. für Webpack oder andere Build-Tools)
+dist/
+build/
+
+# Log files
+*.log
+
+# IDE spezifische Dateien
+.idea/            # IntelliJ IDEA
+.vscode/          # Visual Studio Code
+*.iml             # IntelliJ IDEA Modul-Dateien
+
+# Betriebssystem-spezifische Dateien
+.DS_Store         # macOS
+Thumbs.db         # Windows
+
+# Backup-Dateien
+*~                 # Backup-Dateien (z.B. von Texteditoren)
+*.bak              # Backup-Dateien
+
+# Temporäre Dateien
+*.swp              # Vim Swap-Dateien
+*.swo              # Vim Swap-Dateien
+*.tmp              # Temporäre Dateien
