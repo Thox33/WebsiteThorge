@@ -205,6 +205,12 @@ h6 {
   background: var(--accent-color);
 }
 
+.header .social-links .brand-icon {
+  display: block;
+  height: 16px;
+  width: 16px;
+}
+
 @media (min-width: 1200px) {
 
   .header~main,
@@ -591,6 +597,19 @@ section,
   border-bottom: 2px solid var(--accent-color);
 }
 
+.hero .hero-lead {
+  font-family: var(--default-font);
+  font-size: 17px;
+  line-height: 1.6;
+  margin-top: 22px;
+  max-width: 680px;
+}
+
+.hero .hero-lead span {
+  border: 0;
+  letter-spacing: 0;
+}
+
 .hero .social-links {
   margin-top: 25px;
 }
@@ -716,6 +735,123 @@ section,
   height: 10px;
   transition: 0.9s;
   background-color: var(--accent-color);
+}
+
+.skills .skill-card,
+.projects .project-card,
+.contact .contact-card {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--default-color), transparent 94%);
+}
+
+.skills .skill-card h3,
+.projects .project-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.skills .skill-card p,
+.projects .project-card p {
+  margin-bottom: 18px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tags span {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+  border-radius: 999px;
+  color: var(--heading-color);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 8px 10px;
+}
+
+.projects .project-card {
+  color: var(--default-color);
+  display: block;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projects .project-card:hover {
+  border-color: color-mix(in srgb, var(--accent-color), transparent 45%);
+  box-shadow: 0 14px 34px color-mix(in srgb, var(--default-color), transparent 88%);
+  transform: translateY(-4px);
+}
+
+.projects .project-icon {
+  align-items: center;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  border-radius: 8px;
+  color: var(--accent-color);
+  display: inline-flex;
+  font-size: 26px;
+  height: 52px;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 52px;
+}
+
+.projects .project-card-featured {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: auto 1fr;
+  padding: 36px;
+}
+
+.projects .project-eyebrow {
+  color: var(--accent-color);
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.projects .project-summary {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 20px;
+}
+
+.projects .project-summary div {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 70px 1fr;
+}
+
+.projects .project-summary dt {
+  color: var(--heading-color);
+  font-weight: 700;
+}
+
+.projects .project-summary dd {
+  margin: 0;
+}
+
+.projects .project-link {
+  color: var(--accent-color);
+  display: inline-flex;
+  font-weight: 700;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+@media (max-width: 767px) {
+  .projects .project-card-featured {
+    display: block;
+    padding: 28px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1089,6 +1225,192 @@ section,
 .contact .info-item:hover i {
   background: var(--accent-color);
   color: var(--contrast-color);
+}
+
+.contact .contact-card {
+  color: var(--default-color);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 170px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact .contact-card:hover {
+  border-color: color-mix(in srgb, var(--accent-color), transparent 45%);
+  box-shadow: 0 14px 34px color-mix(in srgb, var(--default-color), transparent 88%);
+  transform: translateY(-4px);
+}
+
+.contact .contact-card i {
+  color: var(--accent-color);
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.contact .contact-card .brand-icon {
+  height: 30px;
+  margin-bottom: 10px;
+  width: 30px;
+}
+
+.contact .contact-card span {
+  color: color-mix(in srgb, var(--default-color), transparent 35%);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.contact .contact-card strong {
+  color: var(--heading-color);
+  font-size: 18px;
+  overflow-wrap: anywhere;
+}
+
+/*--------------------------------------------------------------
+# Project Case Studies
+--------------------------------------------------------------*/
+.project-detail-page .page-title {
+  padding: 72px 0;
+}
+
+.project-detail-page .page-title h1 {
+  font-size: 44px;
+  margin: 8px 0 16px;
+}
+
+.project-detail-page .page-title p {
+  font-size: 18px;
+  margin: 0;
+  max-width: 760px;
+}
+
+.project-detail-page .project-eyebrow {
+  color: var(--accent-color);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.project-case .case-facts,
+.project-case .tech-groups {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.project-case .case-facts {
+  margin-bottom: 56px;
+}
+
+.project-case .case-facts div,
+.project-case .tech-groups div {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 8px;
+  padding: 22px;
+}
+
+.project-case .case-facts span {
+  color: color-mix(in srgb, var(--default-color), transparent 35%);
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.project-case .case-section {
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  margin-top: 44px;
+  padding-top: 44px;
+}
+
+.project-case .case-section h2 {
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+
+.project-case .case-section p,
+.project-case .case-list {
+  font-size: 17px;
+  line-height: 1.75;
+  max-width: 900px;
+}
+
+.project-case .case-list li {
+  margin-bottom: 12px;
+}
+
+.project-case .architecture-flow {
+  align-items: stretch;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+}
+
+.project-case .architecture-flow>div {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px;
+}
+
+.project-case .architecture-flow>div i {
+  color: var(--accent-color);
+  font-size: 26px;
+}
+
+.project-case .architecture-flow>i {
+  align-self: center;
+  color: var(--accent-color);
+}
+
+.project-case .architecture-flow span {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.project-case .tech-groups h3 {
+  font-size: 18px;
+}
+
+.project-case .case-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+.project-case .case-navigation a {
+  align-items: center;
+  display: inline-flex;
+  font-weight: 700;
+  gap: 8px;
+}
+
+@media (max-width: 991px) {
+  .project-case .architecture-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .project-case .architecture-flow>i {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 767px) {
+  .project-detail-page .page-title h1 {
+    font-size: 32px;
+  }
+
+  .project-case .case-navigation {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 .contact .php-email-form {

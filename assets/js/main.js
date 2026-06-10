@@ -106,11 +106,6 @@
   }
 
   /**
-   * Initiate Pure Counter
-   */
-  new PureCounter();
-
-  /**
    * Animate the skills items on reveal
    */
   let skillsAnimation = document.querySelectorAll('.skills-animation');
@@ -130,9 +125,11 @@
   /**
    * Initiate glightbox
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  if (typeof GLightbox !== 'undefined') {
+    GLightbox({
+      selector: '.glightbox'
+    });
+  }
 
   /**
    * Init isotope layout and filters
@@ -225,23 +222,5 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
-
-  function calculateAge() {
-    const birthDate = new Date('1999-10-24');
-    const today = new Date();
-
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const month = today.getMonth() - birthDate.getMonth();
-
-    if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-    }
-
-    // Das berechnete Alter im <span> mit der ID "age" anzeigen
-    document.getElementById('age').textContent = age;
-  }
-
-  // Führe die Funktion aus, wenn die Seite vollständig geladen ist
-  window.addEventListener('load', calculateAge);
 
 })();
