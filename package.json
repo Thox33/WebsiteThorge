@@ -4,15 +4,14 @@
   "description": "Website from Thorge",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "live-server public",
+    "test": "node --check public/assets/js/main.js",
+    "start": "node scripts/serve.mjs",
     "deploy": "gh-pages -d public"
   },
   "homepage": "https://Thox33.github.io/WebsiteThorge/",
   "author": "Thorge Becker",
   "license": "ISC",
   "devDependencies": {
-    "gh-pages": "^6.2.0",
-    "live-server": "^1.2.2"
+    "gh-pages": "^6.3.0"
   }
 }
