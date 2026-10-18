@@ -1255,9 +1255,14 @@ section,
   margin-bottom: 10px;
 }
 
+/* Die Icon-Font-Elemente der anderen Karten belegen ein 45px hohes
+   Zeilenfeld (30px Schriftgroesse plus Zeilenhoehe). Dieses Bild bekommt
+   dieselbe Box, damit Beschriftung und Wert in allen Karten auf gleicher
+   Hoehe sitzen; object-fit haelt das Logo dabei bei 30px. */
 .contact .contact-card .brand-icon {
-  height: 30px;
+  height: 45px;
   margin-bottom: 10px;
+  object-fit: contain;
   width: 30px;
 }
 
