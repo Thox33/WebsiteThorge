@@ -106,6 +106,68 @@
   }
 
   /**
+   * Smooth collapse for the resume entries.
+   *
+   * A <details> element drops its content the instant `open` is removed, so a
+   * closing transition would never get a chance to run. We therefore take the
+   * toggle over ourselves and animate max-height in pixels: the height has to
+   * be a concrete value at both ends, otherwise there is nothing to animate
+   * between.
+   */
+  document.querySelectorAll('.resume-details').forEach((details) => {
+    const summary = details.querySelector('summary');
+    const body = details.querySelector('.resume-details-body');
+    if (!summary || !body) return;
+
+    const reduziert = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let laeuft = false;
+
+    const nachAnimation = (fertig) => {
+      const aufraeumen = () => {
+        body.removeEventListener('transitionend', beiEnde);
+        clearTimeout(notbremse);
+        fertig();
+        laeuft = false;
+      };
+      const beiEnde = (e) => {
+        if (e.target === body && e.propertyName === 'max-height') aufraeumen();
+      };
+      // Falls transitionend ausbleibt, etwa weil der Tab im Hintergrund liegt.
+      const notbremse = setTimeout(aufraeumen, 600);
+      body.addEventListener('transitionend', beiEnde);
+    };
+
+    summary.addEventListener('click', (event) => {
+      event.preventDefault();
+      if (laeuft) return;
+
+      if (reduziert()) {
+        details.open = !details.open;
+        body.style.maxHeight = '';
+        return;
+      }
+
+      laeuft = true;
+
+      if (!details.open) {
+        details.open = true;
+        body.style.maxHeight = '0px';
+        void body.offsetHeight;                   // Reflow erzwingen
+        body.style.maxHeight = body.scrollHeight + 'px';
+        // max-height wieder freigeben, damit der Bereich bei spaeteren
+        // Umbruechen mitwachsen kann.
+        nachAnimation(() => { body.style.maxHeight = ''; });
+        return;
+      }
+
+      body.style.maxHeight = body.scrollHeight + 'px';
+      void body.offsetHeight;
+      body.style.maxHeight = '0px';
+      nachAnimation(() => { details.open = false; body.style.maxHeight = ''; });
+    });
+  });
+
+  /**
    * Animate the skills items on reveal
    */
   let skillsAnimation = document.querySelectorAll('.skills-animation');

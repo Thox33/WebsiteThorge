@@ -617,6 +617,80 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
+/*--------------------------------------------------------------
+# Aufklappbare Berufsstationen
+# Die Zusammenfassung steht immer sichtbar in <summary>, die
+# Stichpunkte klappen darunter auf. Die Hoehenanimation laeuft ueber
+# grid-template-rows 0fr -> 1fr, weil sich "auto" nicht animieren
+# laesst. Das Offenhalten waehrend des Zuklappens uebernimmt main.js.
+--------------------------------------------------------------*/
+.resume .resume-details > summary {
+  cursor: pointer;
+  list-style: none;
+  padding-right: 28px;
+  position: relative;
+}
+
+.resume .resume-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Eigener Pfeil, damit er sich mitdrehen kann */
+.resume .resume-details > summary::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  right: 4px;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  transform: rotate(45deg);
+  transform-origin: center;
+  transition: transform 0.35s ease;
+}
+
+.resume .resume-details[open] > summary::after {
+  transform: rotate(-135deg);
+}
+
+.resume .resume-details > summary:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.resume .resume-details .resume-summary {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  margin-bottom: 0;
+}
+
+/* Die Hoehe wird ueber max-height animiert und von main.js in Pixeln
+   gesetzt. Der naheliegendere Weg ueber grid-template-rows 0fr -> 1fr
+   funktioniert hier nicht: overflow: hidden setzt den Mindestbeitrag des
+   Grid-Elements auf null, und bei unbestimmter Containerhoehe loest sich
+   1fr genau zu diesem Minimum auf - der Bereich bliebe zugeklappt. */
+.resume .resume-details .resume-details-body {
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.resume .resume-details:not([open]) .resume-details-body {
+  max-height: 0;
+}
+
+.resume .resume-details .resume-details-body > ul {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resume .resume-details .resume-details-body,
+  .resume .resume-details > summary::after {
+    transition: none;
+  }
+}
+
 .hero .social-links {
   margin-top: 25px;
 }
