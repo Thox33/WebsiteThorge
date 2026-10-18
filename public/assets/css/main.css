@@ -750,7 +750,7 @@ section,
   background: var(--surface-color);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
   border-radius: 8px;
-  padding: 28px;
+  padding: 22px;
   box-shadow: 0 8px 24px color-mix(in srgb, var(--default-color), transparent 94%);
 }
 
@@ -1268,9 +1268,11 @@ section,
   text-transform: uppercase;
 }
 
+/* Fuenf Karten nebeneinander lassen je rund 200px Breite. Bei 18px brach
+   die laengste Angabe (die E-Mail-Adresse) mitten im Wort um. */
 .contact .contact-card strong {
   color: var(--heading-color);
-  font-size: 18px;
+  font-size: 15px;
   overflow-wrap: anywhere;
 }
 
