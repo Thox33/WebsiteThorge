@@ -610,6 +610,87 @@ section,
   letter-spacing: 0;
 }
 
+/* Second line under an employer that held more than one role */
+.resume .resume-item .resume-roles {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+/*--------------------------------------------------------------
+# Aufklappbare Berufsstationen
+# Die Zusammenfassung steht immer sichtbar in <summary>, die
+# Stichpunkte klappen darunter auf. Die Hoehenanimation laeuft ueber
+# grid-template-rows 0fr -> 1fr, weil sich "auto" nicht animieren
+# laesst. Das Offenhalten waehrend des Zuklappens uebernimmt main.js.
+--------------------------------------------------------------*/
+.resume .resume-details > summary {
+  cursor: pointer;
+  list-style: none;
+  padding-right: 28px;
+  position: relative;
+}
+
+.resume .resume-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Eigener Pfeil, damit er sich mitdrehen kann */
+.resume .resume-details > summary::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  right: 4px;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  transform: rotate(45deg);
+  transform-origin: center;
+  transition: transform 0.35s ease;
+}
+
+.resume .resume-details[open] > summary::after {
+  transform: rotate(-135deg);
+}
+
+.resume .resume-details > summary:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.resume .resume-details .resume-summary {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  margin-bottom: 0;
+}
+
+/* Die Hoehe wird ueber max-height animiert und von main.js in Pixeln
+   gesetzt. Der naheliegendere Weg ueber grid-template-rows 0fr -> 1fr
+   funktioniert hier nicht: overflow: hidden setzt den Mindestbeitrag des
+   Grid-Elements auf null, und bei unbestimmter Containerhoehe loest sich
+   1fr genau zu diesem Minimum auf - der Bereich bliebe zugeklappt. */
+.resume .resume-details .resume-details-body {
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.resume .resume-details:not([open]) .resume-details-body {
+  max-height: 0;
+}
+
+.resume .resume-details .resume-details-body > ul {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resume .resume-details .resume-details-body,
+  .resume .resume-details > summary::after {
+    transition: none;
+  }
+}
+
 .hero .social-links {
   margin-top: 25px;
 }
@@ -640,6 +721,16 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+/* Rahmen um das Portrait: heller Passepartout durch das Innenabstand-
+   Feld, dazu feine Linie und weicher Schatten wie bei den Kontaktkarten. */
+.about .about-img {
+  background-color: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-radius: 10px;
+  padding: 8px;
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
 .about .content h2 {
   font-weight: 700;
   font-size: 24px;
@@ -743,7 +834,7 @@ section,
   background: var(--surface-color);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
   border-radius: 8px;
-  padding: 28px;
+  padding: 22px;
   box-shadow: 0 8px 24px color-mix(in srgb, var(--default-color), transparent 94%);
 }
 
@@ -1248,9 +1339,14 @@ section,
   margin-bottom: 10px;
 }
 
+/* Die Icon-Font-Elemente der anderen Karten belegen ein 45px hohes
+   Zeilenfeld (30px Schriftgroesse plus Zeilenhoehe). Dieses Bild bekommt
+   dieselbe Box, damit Beschriftung und Wert in allen Karten auf gleicher
+   Hoehe sitzen; object-fit haelt das Logo dabei bei 30px. */
 .contact .contact-card .brand-icon {
-  height: 30px;
+  height: 45px;
   margin-bottom: 10px;
+  object-fit: contain;
   width: 30px;
 }
 
@@ -1261,9 +1357,11 @@ section,
   text-transform: uppercase;
 }
 
+/* Fuenf Karten nebeneinander lassen je rund 200px Breite. Bei 18px brach
+   die laengste Angabe (die E-Mail-Adresse) mitten im Wort um. */
 .contact .contact-card strong {
   color: var(--heading-color);
-  font-size: 18px;
+  font-size: 15px;
   overflow-wrap: anywhere;
 }
 

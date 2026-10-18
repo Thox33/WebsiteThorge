@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Thorge Becker | Full-Stack Developer & Software Architect</title>
-  <meta content="Thorge Becker is a full-stack developer, software architect, and technical lead building distributed energy management systems across edge devices, backend services, and web applications." name="description">
-  <meta content="Thorge Becker, Full-Stack Developer, Software Architect, Technical Lead, Energy Management, Python, React, MQTT, Docker, Hamburg" name="keywords">
+  <meta content="Thorge Becker, full-stack developer and software architect in Hamburg. Software solutions from architecture through backend services to deployment." name="description">
+  <meta content="Thorge Becker, Full-Stack Developer, Software Architect, Technical Lead, Distributed Systems, Freelance Developer, Python, React, TypeScript, Docker, Hamburg" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/thorge-logo.png" rel="icon">
@@ -91,18 +91,16 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="assets/img/thorge-wide-image.png" alt="" data-aos="fade-in" class="">
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Thorge Becker</h2>
-        <p>I am <span class="typed" data-typed-items="a Full-Stack Developer, a Software Architect, a Technical Lead, building distributed energy systems"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
-        <p class="hero-lead">Designing and leading the development of distributed energy management systems across edge devices, backend services, and web applications.</p>
+        <p>I am <span class="typed" data-typed-items="a Full-Stack Developer, a Software Architect, a Technical Lead, building software solutions"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+        <p class="hero-lead">Designing and developing complex software solutions, from system architecture through backend services and interfaces to production deployment.</p>
       </div>
 
     </section><!-- /Hero Section -->
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    <section id="about" class="about section light-background">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -114,12 +112,12 @@
 
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-4">
-            <img src="assets/img/thorge-profile-image.png" class="img-fluid" alt="">
+            <img src="assets/img/thorge-profile-image.png" class="img-fluid about-img" alt="Thorge Becker">
           </div>
           <div class="col-lg-8 content">
             <h2>Building reliable software from architecture to deployment.</h2>
             <p class="fst-italic py-3">
-              I turn complex technical requirements into maintainable systems that connect software, infrastructure, and physical energy devices.
+              I turn complex technical requirements into maintainable systems that connect software, infrastructure, and physical hardware.
             </p>
             <div class="row">
               <div class="col-lg-6">
@@ -192,41 +190,76 @@
             <h3 class="resume-title">Professional Experience</h3>
 
             <div class="resume-item">
-              <h4>Development Engineer / Full-Stack Developer & Technical Lead</h4>
-              <h5>05.2025 - Present</h5>
-              <p><em>Mentorics GmbH</em></p>
-              <ul>
-                <li>Lead the development of an energy management system that enables cost-optimized battery operation by leveraging dynamic electricity prices.</li>
-                <li>Designed the distributed full-stack architecture across the central backend, edge software platform, Raspberry Pi-based device controllers, and web applications.</li>
-                <li>Develop backend services, REST APIs, WebSocket and MQTT communication, time-series data storage, React interfaces, and integrations for distributed energy devices.</li>
-                <li>Own infrastructure and deployment workflows, including GitHub Actions CI/CD, Docker configurations, release processes, VPN setup, monitoring, and secure certificate-based communication.</li>
-                <li>Lead a team of three developers and coordinate technical implementation, code quality, testing, and documentation.</li>
-              </ul>
+              <details class="resume-details">
+                <summary>
+                  <h4>Freelance Software Developer &amp; Software Architect</h4>
+                  <h5>10.2026 - Present</h5>
+                  <p><em>Self-employed &middot; client: Helmer GmbH, Hamburg</em></p>
+                  <p class="resume-summary">Architecture and full-stack development of a browser-based interface for a robotics localization system.</p>
+                </summary>
+                <div class="resume-details-body">
+                  <ul>
+                    <li>Design and develop a browser-based operating and diagnostics interface for a robotics localization system.</li>
+                    <li>Develop the Python and FastAPI backend, including a JSON-RPC client with strict TLS verification, session management, binary telemetry parsing, and live data over WebSocket.</li>
+                    <li>Build the React and TypeScript frontend using TanStack, Zustand, SCSS design tokens, and internationalization.</li>
+                    <li>Own the monorepo structure, container builds, pre-commit checks, vulnerability scanning, and delivery through Azure DevOps.</li>
+                  </ul>
+                </div>
+              </details>
             </div><!-- End Resume Item -->
 
             <div class="resume-item">
-              <h4>Working Student - Software Developer</h4>
-              <h5>02.2022 - 04.2025</h5>
-              <p><em>Helmer GmbH, Hamburg</em></p>
-              <ul>
-                <li>Development of audio and microphone adapters as well as 3D visualizations for Robot Operating Systems.</li>
-                <li>Creation of scripts for automated trading.</li>
-                <li>Migration of SVN repositories to Git and uploading them to Azure DevOps.</li>
-                <li>Development of a microcontroller with Arduino for an embedded system for automated irrigation.</li>
-                <li>Support in developing a control unit for coordinating inverters and battery charging/discharging systems.</li>
-                <li>Migration of Bugzilla tickets to Azure DevOps and setup of the Azure DevOps project.</li>
-                <li>Design and implementation of a monitoring web server for automated notifications.</li>
-              </ul>
+              <details class="resume-details">
+                <summary>
+                  <h4>Development Engineer / Full-Stack Developer &amp; Technical Lead</h4>
+                  <h5>05.2025 - 09.2026</h5>
+                  <p><em>Mentorics GmbH, Hamburg</em></p>
+                  <p class="resume-summary">Technical lead for a distributed energy management system, from architecture through to deployment.</p>
+                </summary>
+                <div class="resume-details-body">
+                  <ul>
+                    <li>Lead the development of an energy management system that enables cost-optimized battery operation by leveraging dynamic electricity prices.</li>
+                    <li>Designed the distributed full-stack architecture across the central backend, edge software platform, Raspberry Pi-based device controllers, and web applications.</li>
+                    <li>Develop backend services, REST APIs, WebSocket and MQTT communication, time-series data storage, React interfaces, and integrations for distributed energy devices.</li>
+                    <li>Own infrastructure and deployment workflows, including GitHub Actions CI/CD, Docker, VPN setup and monitoring, and lead a team of three developers.</li>
+                  </ul>
+                </div>
+              </details>
             </div><!-- End Resume Item -->
 
             <div class="resume-item">
-              <h4>Working Student - Software Developer</h4>
-              <h5>05.2021 - 04.2022</h5>
-              <p><em>Deckma Hamburg GmbH, Hamburg</em></p>
-              <ul>
-                <li>Identification and resolution of software issues.</li>
-                <li>Development of a GUI for production and testing tools.</li>
-              </ul>
+              <details class="resume-details">
+                <summary>
+                  <h4>Software Developer &middot; Working Student</h4>
+                  <h5>02.2022 - 04.2025</h5>
+                  <p><em>Helmer GmbH, Hamburg</em></p>
+                  <p class="resume-roles"><em>Software Developer (10.2024 - 04.2025, part-time) &middot; Working Student (02.2022 - 09.2024)</em></p>
+                  <p class="resume-summary">Embedded control software, monitoring tooling, and repository migrations to Azure DevOps.</p>
+                </summary>
+                <div class="resume-details-body">
+                  <ul>
+                    <li>Developed a control unit for coordinating inverters and battery charging and discharging systems, and a monitoring web server for automated notifications.</li>
+                    <li>Developed audio and microphone adapters as well as 3D visualizations for Robot Operating Systems, and an Arduino-based embedded system for automated irrigation.</li>
+                    <li>Migrated SVN repositories and Bugzilla tickets to Azure DevOps, including the setup of the project structure.</li>
+                  </ul>
+                </div>
+              </details>
+            </div><!-- End Resume Item -->
+
+            <div class="resume-item">
+              <details class="resume-details">
+                <summary>
+                  <h4>Working Student - Software Developer</h4>
+                  <h5>05.2021 - 04.2022</h5>
+                  <p><em>Deckma Hamburg GmbH, Hamburg</em></p>
+                  <p class="resume-summary">GUI development and debugging for production and test tooling.</p>
+                </summary>
+                <div class="resume-details-body">
+                  <ul>
+                    <li>Developed a GUI for production and testing tools, and identified and resolved software issues in existing systems.</li>
+                  </ul>
+                </div>
+              </details>
             </div><!-- End Resume Item -->
 
           </div>
@@ -343,7 +376,7 @@
             <div class="icon flex-shrink-0"><i class="bi bi-cpu"></i></div>
             <div>
               <h4 class="title">Edge & Device Integration</h4>
-              <p class="description">Connecting energy devices and local controllers through MQTT, device drivers, validation, monitoring, and resilient edge software.</p>
+              <p class="description">Connecting devices and local controllers through MQTT, device drivers, validation, monitoring, and resilient edge software.</p>
             </div>
           </div>
 
@@ -351,7 +384,7 @@
             <div class="icon flex-shrink-0"><i class="bi bi-window"></i></div>
             <div>
               <h4 class="title">Frontend Development</h4>
-              <p class="description">Developing React-based dashboards and management interfaces for real-time status, historical energy data, and system administration.</p>
+              <p class="description">Developing React-based dashboards and management interfaces for real-time status, historical data, and system administration.</p>
             </div>
           </div>
 
@@ -377,7 +410,7 @@
 
     </section><!-- /Services Section -->
 <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="contact section light-background">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -389,7 +422,7 @@
 
         <div class="row gy-4 contact-actions">
 
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg col-md-6">
             <a class="contact-card h-100" href="mailto:web@thorgebecker.de">
               <i class="bi bi-envelope"></i>
               <span>Email</span>
@@ -397,7 +430,7 @@
             </a>
           </div>
 
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg col-md-6">
             <a class="contact-card h-100" href="https://github.com/Thox33">
               <i class="bi bi-github"></i>
               <span>GitHub</span>
@@ -405,7 +438,7 @@
             </a>
           </div>
 
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg col-md-6">
             <a class="contact-card h-100" href="https://www.xing.com/profile/Thorge_Becker01389/web_profiles">
               <img class="brand-icon" src="https://cdn.simpleicons.org/xing/149ddd" alt="">
               <span>Xing</span>
@@ -413,11 +446,19 @@
             </a>
           </div>
 
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg col-md-6">
             <a class="contact-card h-100" href="https://www.linkedin.com/in/thorge-becker-2ab857340/">
               <i class="bi bi-linkedin"></i>
               <span>LinkedIn</span>
               <strong>LinkedIn profile</strong>
+            </a>
+          </div>
+
+          <div class="col-lg col-md-6">
+            <a class="contact-card h-100" href="Lebenslauf_Thorge_Becker.pdf" download>
+              <i class="bi bi-file-earmark-arrow-down"></i>
+              <span>CV</span>
+              <strong>Download as PDF</strong>
             </a>
           </div>
 
